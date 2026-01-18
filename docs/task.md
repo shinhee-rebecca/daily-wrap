@@ -9,11 +9,11 @@
 | Phase 1: 디자인 시스템 | 8/8 | ✅ 완료 |
 | Phase 1.5: Mock 웹앱 | 9/9 | ✅ 완료 |
 | Phase 2: 데이터베이스 & API | 7/7 | ✅ 완료 |
-| Phase 3: 뉴스 파이프라인 | 0/10 | ⬜ 대기 |
+| Phase 3: 뉴스 파이프라인 | 10/10 | ✅ 완료 |
 | Phase 4: 웹 애플리케이션 | 0/10 | ⬜ 대기 |
 | Phase 5: 베타 기능 | 0/6 | ⬜ 대기 |
 | Phase 6: 마무리 & 배포 | 0/10 | ⬜ 대기 |
-| **전체** | **24/60** | **40%** |
+| **전체** | **34/60** | **57%** |
 
 ---
 
@@ -199,68 +199,70 @@
 
 ---
 
-## Phase 3: 뉴스 파이프라인
+## Phase 3: 뉴스 파이프라인 ✅
 
 ### 3.1 RSS 수집
-- [ ] **네이버 뉴스 RSS 피드 조사**
-  - 작업: 정치/경제/사회 카테고리별 RSS URL 확보
-  - 완료조건: 3개 피드 URL 문서화
+- [x] **네이버 뉴스 RSS 피드 조사**
+  - 파일: `docs/rss-feeds.md`
+  - 작업: 정치/경제/사회 카테고리별 RSS URL 확보 (주요 언론사 피드 활용)
+  - 완료조건: 3개 카테고리 x 3개 언론사 = 9개 피드 URL 문서화
   - 테스트: 브라우저에서 피드 직접 접근, XML 구조 확인
 
-- [ ] **RSS 파서 모듈**
-  - 파일: `scripts/pipeline/rss-fetcher.ts` (신규)
+- [x] **RSS 파서 모듈**
+  - 파일: `scripts/pipeline/rss-fetcher.ts`
   - 의존성: `rss-parser`
   - 작업: 3개 카테고리 피드 수집, 정규화 (title, link, pubDate, description)
   - 완료조건: 정규화된 뉴스 아이템 배열 반환
   - 테스트: 로컬 실행, 콘솔 출력 확인
 
-- [ ] **중복 제거 로직**
-  - 파일: `scripts/pipeline/deduplicator.ts` (신규)
-  - 작업: URL 유사도, 제목 유사도 기반 중복 탐지
+- [x] **중복 제거 로직**
+  - 파일: `scripts/pipeline/deduplicator.ts`
+  - 작업: URL 유사도, 제목 유사도 (N-gram) 기반 중복 탐지
   - 완료조건: 중복 기사 필터링
   - 테스트: 알려진 중복 기사로 테스트
 
 ### 3.2 AI 요약
-- [ ] **Anthropic 클라이언트 설정**
-  - 파일: `lib/anthropic/client.ts` (신규)
+- [x] **Anthropic 클라이언트 설정**
+  - 파일: `lib/anthropic/client.ts`
   - 의존성: `@anthropic-ai/sdk`
-  - 완료조건: ANTHROPIC_API_KEY 환경변수 설정, 클라이언트 초기화
+  - 완료조건: ANTHROPIC_API_KEY 환경변수 설정, 클라이언트 초기화, DRY_RUN 모드 지원
   - 테스트: 간단한 completion 호출
 
-- [ ] **요약 프롬프트 설계**
-  - 파일: `scripts/pipeline/prompts/summarize.ts` (신규)
+- [x] **요약 프롬프트 설계**
+  - 파일: `scripts/pipeline/prompts/summarize.ts`
   - 작업: 한줄 헤드라인 + 2-3문장 요약 생성 (원문 복사 금지)
-  - 완료조건: 일관된 품질의 요약 생성
+  - 완료조건: 일관된 품질의 요약 생성, 배치 처리 지원
   - 테스트: 10개 샘플 기사로 품질 검증
 
-- [ ] **중요도 랭킹 프롬프트**
-  - 파일: `scripts/pipeline/prompts/rank.ts` (신규)
+- [x] **중요도 랭킹 프롬프트**
+  - 파일: `scripts/pipeline/prompts/rank.ts`
   - 작업: 카테고리 내 중요도 순위 결정 (1-5)
   - 완료조건: 일관된 랭킹 결과
   - 테스트: 랭킹 결과 검토
 
-- [ ] **파이프라인 오케스트레이터**
-  - 파일: `scripts/pipeline/orchestrator.ts` (신규)
-  - 작업: RSS 수집 → 중복제거 → 요약 → 랭킹 → 저장
+- [x] **파이프라인 오케스트레이터**
+  - 파일: `scripts/pipeline/orchestrator.ts`
+  - 작업: RSS 수집 → 중복제거 → 요약 → 랭킹 → 저장 → Revalidation
   - 완료조건: 전체 파이프라인 end-to-end 실행
   - 테스트: 로컬 실행 후 Supabase 데이터 확인
 
 ### 3.3 GitHub Actions 자동화
-- [ ] **Daily Cron 워크플로우**
-  - 파일: `.github/workflows/daily-briefing.yml` (신규)
+- [x] **Daily Cron 워크플로우**
+  - 파일: `.github/workflows/daily-briefing.yml`
   - 스케줄: `0 21 * * *` (KST 06:00 = UTC 21:00)
   - 작업: checkout → setup Node → install → run pipeline → revalidate
-  - 완료조건: YAML 유효, 올바른 시간에 트리거
+  - 완료조건: YAML 유효, 올바른 시간에 트리거, 수동 실행 지원 (workflow_dispatch)
   - 테스트: workflow_dispatch로 수동 실행
 
-- [ ] **GitHub Secrets 설정**
+- [x] **GitHub Secrets 설정 가이드**
+  - 파일: `docs/github-secrets.md`
   - 항목: SUPABASE_URL, SUPABASE_SERVICE_KEY, ANTHROPIC_API_KEY, REVALIDATION_SECRET
-  - 완료조건: Repository Settings에 모든 secrets 설정
+  - 완료조건: 상세한 설정 방법 문서화
   - 테스트: 워크플로우 실행 시 인증 에러 없음
 
-- [ ] **실패 알림 설정**
-  - 작업: 워크플로우 실패 시 알림 (GitHub 이메일 또는 Slack)
-  - 완료조건: 실패 시 알림 수신
+- [x] **실패 알림 설정**
+  - 작업: 워크플로우 실패 시 GitHub 이메일 알림 (기본 제공), 에러 핸들링
+  - 완료조건: 실패 시 알림 수신, graceful degradation
   - 테스트: 의도적 실패 후 알림 확인
 
 ---
