@@ -10,7 +10,7 @@
 import {
   sendMessageSafe,
   parseJsonResponse,
-} from "@/lib/anthropic/client";
+} from "@/lib/openai/client";
 import type { RawNewsItem } from "../rss-fetcher";
 
 /**

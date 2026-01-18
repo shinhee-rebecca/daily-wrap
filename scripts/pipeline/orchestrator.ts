@@ -6,7 +6,7 @@
  */
 
 import { createServiceClient } from "@/lib/supabase/server";
-import { hasApiKey } from "@/lib/anthropic/client";
+import { hasApiKey } from "@/lib/openai/client";
 import { fetchAllFeeds, filterRecentNews } from "./rss-fetcher";
 import { deduplicateNews, groupByCategory } from "./deduplicator";
 import { summarizeNewsBatch } from "./prompts/summarize";

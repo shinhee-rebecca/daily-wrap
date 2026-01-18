@@ -9,7 +9,7 @@
 import {
   sendMessageSafe,
   parseJsonResponse,
-} from "@/lib/anthropic/client";
+} from "@/lib/openai/client";
 import type { SummarizedNews } from "./summarize";
 import type { NewsCategory } from "@/types/database";
 
