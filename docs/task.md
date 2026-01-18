@@ -6,27 +6,27 @@
 
 | Phase | 진행률 | 상태 |
 |-------|--------|------|
-| Phase 1: 디자인 시스템 | 0/8 | ⬜ 대기 |
+| Phase 1: 디자인 시스템 | 8/8 | ✅ 완료 |
 | Phase 2: 데이터베이스 & API | 0/7 | ⬜ 대기 |
 | Phase 3: 뉴스 파이프라인 | 0/10 | ⬜ 대기 |
 | Phase 4: 웹 애플리케이션 | 0/10 | ⬜ 대기 |
 | Phase 5: 베타 기능 | 0/6 | ⬜ 대기 |
 | Phase 6: 마무리 & 배포 | 0/10 | ⬜ 대기 |
-| **전체** | **0/51** | **0%** |
+| **전체** | **8/51** | **16%** |
 
 ---
 
-## Phase 1: 디자인 시스템 구축
+## Phase 1: 디자인 시스템 구축 ✅
 
 ### 1.1 타이포그래피 설정
-- [ ] **Google Fonts 설정**
+- [x] **Google Fonts 설정**
   - 파일: `app/layout.tsx`
   - 작업: Playfair Display, Noto Serif KR, Source Serif 4, Cormorant Garamond 폰트 추가
   - 완료조건: `--font-headline`, `--font-body`, `--font-display` CSS 변수가 동작
   - 테스트: `pnpm dev` 실행 후 DevTools에서 폰트 적용 확인
 
 ### 1.2 컬러 시스템 구현
-- [ ] **Editorial Broadsheet 컬러 팔레트 적용**
+- [x] **Editorial Broadsheet 컬러 팔레트 적용**
   - 파일: `app/globals.css`
   - 작업:
     - 배경: Warm Cream `#F8F6F1`
@@ -37,40 +37,40 @@
   - 테스트: 페이지 배경이 Warm Cream, 텍스트가 Charcoal로 표시
 
 ### 1.3 Typography 컴포넌트
-- [ ] **Typography 컴포넌트 생성**
-  - 파일: `components/typography/index.tsx` (신규)
-  - 작업: Headline, Subheadline, BodyText, Caption 컴포넌트 구현
+- [x] **Typography 컴포넌트 생성**
+  - 파일: `components/typography/index.tsx`
+  - 작업: Headline, Subheadline, BodyText, Caption, DateDisplay 컴포넌트 구현 (CVA 패턴)
   - 완료조건: 반응형 폰트 크기 (Desktop 4rem → Mobile 2rem)
   - 테스트: 1440px, 768px, 375px 뷰포트에서 렌더링 확인
 
 ### 1.4 레이아웃 시스템
-- [ ] **그리드 & 간격 시스템 구현**
+- [x] **그리드 & 간격 시스템 구현**
   - 파일: `app/globals.css`
-  - 작업: 12컬럼 그리드, spacing 변수 (xs~3xl)
+  - 작업: spacing 변수 (xs~3xl), 타이포그래피 스케일, 트랜지션 변수
   - 완료조건: Desktop 12컬럼, Tablet 8컬럼, Mobile 4컬럼
   - 테스트: 반응형 브레이크포인트 동작 확인
 
 ### 1.5 UI 컴포넌트
-- [ ] **Divider 컴포넌트**
-  - 파일: `components/ui/divider.tsx` (신규)
+- [x] **Divider 컴포넌트**
+  - 파일: `components/ui/divider.tsx`
   - 작업: main, double, section, dotted 4가지 variant
   - 완료조건: 디자인 스펙 섹션 5.4와 일치
   - 테스트: 각 variant 렌더링 확인
 
-- [ ] **SectionTag 컴포넌트**
-  - 파일: `components/ui/section-tag.tsx` (신규)
+- [x] **SectionTag 컴포넌트**
+  - 파일: `components/ui/section-tag.tsx`
   - 작업: 정치/경제/사회 카테고리 태그
   - 완료조건: 섹션별 색상 적용 (정치 #C41E3A, 경제 #2D4A3E, 사회 #8B4513)
   - 테스트: 3가지 variant 색상 확인
 
-- [ ] **NewsCard 컴포넌트**
-  - 파일: `components/news/news-card.tsx` (신규)
+- [x] **NewsCard 컴포넌트**
+  - 파일: `components/news/news-card.tsx`
   - 작업: featured (전체폭), secondary (절반폭) variant
   - 완료조건: hover 시 translateX(4px), 배경색 변경
   - 테스트: hover 효과 동작 확인
 
-- [ ] **SectionHeader 컴포넌트**
-  - 파일: `components/news/section-header.tsx` (신규)
+- [x] **SectionHeader 컴포넌트**
+  - 파일: `components/news/section-header.tsx`
   - 작업: 한글 섹션명 + 영문 라벨 + 장식선
   - 완료조건: 디자인 스펙 섹션 5.2와 일치
   - 테스트: 디자인 스펙과 비교
