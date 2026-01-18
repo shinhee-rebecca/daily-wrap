@@ -1,19 +1,19 @@
 # Daily Wrap 개발 태스크 트래커
 
-> 마지막 업데이트: 2026-01-18
+> 마지막 업데이트: 2026-01-19
 
 ## 진행 현황 요약
 
 | Phase | 진행률 | 상태 |
 |-------|--------|------|
 | Phase 1: 디자인 시스템 | 8/8 | ✅ 완료 |
-| Phase 1.5: Mock 웹앱 | 0/9 | ⬜ 대기 |
-| Phase 2: 데이터베이스 & API | 0/7 | ⬜ 대기 |
+| Phase 1.5: Mock 웹앱 | 9/9 | ✅ 완료 |
+| Phase 2: 데이터베이스 & API | 7/7 | ✅ 완료 |
 | Phase 3: 뉴스 파이프라인 | 0/10 | ⬜ 대기 |
 | Phase 4: 웹 애플리케이션 | 0/10 | ⬜ 대기 |
 | Phase 5: 베타 기능 | 0/6 | ⬜ 대기 |
 | Phase 6: 마무리 & 배포 | 0/10 | ⬜ 대기 |
-| **전체** | **8/60** | **13%** |
+| **전체** | **24/60** | **40%** |
 
 ---
 
@@ -78,33 +78,33 @@
 
 ---
 
-## Phase 1.5: Mock 웹앱 (시각적 프로토타입)
+## Phase 1.5: Mock 웹앱 (시각적 프로토타입) ✅
 
 > 목표: DB/API 구현 전에 Mock 데이터로 전체 UI를 먼저 확인
 
 ### 1.5.1 Mock 데이터 구조
-- [ ] **타입 정의**
-  - 파일: `types/briefing.ts` (신규)
+- [x] **타입 정의**
+  - 파일: `types/briefing.ts`
   - 작업: Briefing, NewsItem, BetaSignupStats 인터페이스 정의
   - 완료조건: Phase 2의 DB 스키마와 호환되는 타입
   - 테스트: TypeScript 컴파일 에러 없음
 
-- [ ] **Mock 데이터 생성**
-  - 파일: `lib/mock/briefings.json` (신규)
+- [x] **Mock 데이터 생성**
+  - 파일: `lib/mock/briefings.json`
   - 작업: 3일치 브리핑 데이터 (오늘, 어제, 그저께)
   - 데이터: 각 날짜별 정치/경제/사회 3개 섹션, 섹션당 5개 뉴스
   - 완료조건: 실제 뉴스처럼 보이는 현실적인 Mock 데이터
   - 테스트: JSON 유효성 검사
 
-- [ ] **Mock 데이터 유틸리티**
-  - 파일: `lib/mock/index.ts` (신규)
+- [x] **Mock 데이터 유틸리티**
+  - 파일: `lib/mock/index.ts`
   - 작업: `getTodayBriefing()`, `getBriefingByDate()`, `getRecentBriefings()` 함수
   - 완료조건: 나중에 실제 API로 쉽게 교체 가능한 인터페이스
   - 테스트: 함수 호출 시 올바른 데이터 반환
 
 ### 1.5.2 메인 페이지 구현
-- [ ] **홈 페이지 레이아웃**
-  - 파일: `app/page.tsx` (수정)
+- [x] **홈 페이지 레이아웃**
+  - 파일: `app/page.tsx`
   - 작업:
     - DAILY WRAP 헤더 + 한국어 날짜
     - 이중선 구분자
@@ -112,28 +112,28 @@
   - 완료조건: 디자인 스펙 섹션 5.1과 일치
   - 테스트: `pnpm dev`에서 시각적 확인
 
-- [ ] **뉴스 섹션 컴포넌트**
-  - 파일: `components/news/news-section.tsx` (신규)
+- [x] **뉴스 섹션 컴포넌트**
+  - 파일: `components/news/news-section.tsx`
   - 작업: SectionHeader + featured NewsCard + secondary NewsCard 목록 조합
   - 완료조건: 각 섹션이 독립적으로 렌더링
   - 테스트: 정치/경제/사회 3가지 variant 확인
 
 ### 1.5.3 아카이브 페이지 구현
-- [ ] **아카이브 목록 페이지**
-  - 파일: `app/archive/page.tsx` (신규)
+- [x] **아카이브 목록 페이지**
+  - 파일: `app/archive/page.tsx`
   - 작업: 최근 브리핑 날짜 목록, "오늘로 돌아가기" 링크
   - 완료조건: Mock 데이터의 모든 날짜 표시
   - 테스트: 목록에서 날짜 클릭 시 상세 페이지 이동
 
-- [ ] **날짜별 브리핑 페이지**
-  - 파일: `app/archive/[date]/page.tsx` (신규)
+- [x] **날짜별 브리핑 페이지**
+  - 파일: `app/archive/[date]/page.tsx`
   - 작업: 홈과 동일한 레이아웃 + 이전/다음 네비게이션
   - 완료조건: `/archive/2026-01-17` 형식 URL 동작
   - 테스트: Mock 데이터 날짜로 접근 확인
 
 ### 1.5.4 베타 신청 UI
-- [ ] **베타 신청 CTA 컴포넌트**
-  - 파일: `components/beta/signup-cta.tsx` (신규)
+- [x] **베타 신청 CTA 컴포넌트**
+  - 파일: `components/beta/signup-cta.tsx`
   - 작업:
     - 장식 테두리 박스
     - "42/100 베타 테스터 모집 중" (Mock 숫자)
@@ -141,23 +141,24 @@
   - 완료조건: 디자인 스펙 섹션 5.5와 일치
   - 테스트: 폼 입력 및 제출 동작 확인
 
-- [ ] **홈 페이지에 CTA 배치**
-  - 파일: `app/page.tsx` (수정)
+- [x] **홈 페이지에 CTA 배치**
+  - 파일: `app/page.tsx`
   - 작업: 페이지 하단에 Signup CTA 추가
   - 완료조건: 스크롤하면 CTA가 보임
   - 테스트: 시각적 확인
 
 ---
 
-## Phase 2: 데이터베이스 & API
+## Phase 2: 데이터베이스 & API ✅
 
 ### 2.1 Supabase 설정
-- [ ] **Supabase 프로젝트 생성**
+- [x] **Supabase 프로젝트 생성**
   - 작업: 새 프로젝트 생성, URL과 anon key 기록
   - 완료조건: Supabase Dashboard 접근 가능
   - 테스트: Dashboard에서 프로젝트 확인
 
-- [ ] **데이터베이스 스키마 생성**
+- [x] **데이터베이스 스키마 생성**
+  - 파일: `supabase/schema.sql`
   - 테이블:
     - `briefings`: id, date (unique), created_at, published_at
     - `news_items`: id, briefing_id (FK), category, title, summary, source_name, source_url, importance_rank
@@ -165,34 +166,34 @@
   - 완료조건: 3개 테이블 + RLS 정책 설정 완료
   - 테스트: Dashboard에서 Insert/Select 동작 확인
 
-- [ ] **Supabase 클라이언트 설정**
-  - 파일: `lib/supabase/client.ts`, `lib/supabase/server.ts` (신규)
+- [x] **Supabase 클라이언트 설정**
+  - 파일: `lib/supabase/client.ts`, `lib/supabase/server.ts`
   - 의존성: `@supabase/supabase-js`
   - 완료조건: 환경변수 설정, 클라이언트 초기화
   - 테스트: API 라우트에서 연결 테스트
 
-- [ ] **TypeScript 타입 정의**
-  - 파일: `types/database.ts` (신규)
+- [x] **TypeScript 타입 정의**
+  - 파일: `types/database.ts`
   - 작업: Briefing, NewsItem, BetaSignup 인터페이스
   - 완료조건: 모든 DB 엔티티 타입 정의
   - 테스트: TypeScript 컴파일 에러 없음
 
 ### 2.2 API 라우트
-- [ ] **브리핑 조회 API**
-  - 파일: `app/api/briefings/route.ts`, `app/api/briefings/[date]/route.ts` (신규)
+- [x] **브리핑 조회 API**
+  - 파일: `app/api/briefings/route.ts`, `app/api/briefings/[date]/route.ts`
   - 작업: GET 목록 (최근 30일), GET 단일 (날짜별)
   - 완료조건: 올바른 JSON 구조 반환
   - 테스트: curl로 응답 확인
 
-- [ ] **베타 신청 API**
-  - 파일: `app/api/beta-signup/route.ts` (신규)
-  - 작업: POST 신청, 이메일 검증, 중복 체크
+- [x] **베타 신청 API**
+  - 파일: `app/api/beta-signup/route.ts`
+  - 작업: POST 신청, GET 통계 조회, 이메일 검증, 중복 체크
   - 완료조건: 신청 레코드 생성, 적절한 응답 반환
   - 테스트: 신청 후 DB 저장 확인
 
-- [ ] **Revalidation Webhook**
-  - 파일: `app/api/revalidate/route.ts` (신규)
-  - 작업: POST로 ISR 캐시 갱신 트리거
+- [x] **Revalidation Webhook**
+  - 파일: `app/api/revalidate/route.ts`
+  - 작업: POST로 ISR 캐시 갱신 트리거 (Next.js 16 호환)
   - 완료조건: secret 토큰 검증 후 revalidate 실행
   - 테스트: Webhook 호출 후 새 콘텐츠 표시 확인
 
