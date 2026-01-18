@@ -6,6 +6,7 @@ import { Headline, BodyText, Caption } from "@/components/typography";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { getBetaSignupStats } from "@/lib/mock";
+import type { BetaSignupStats } from "@/types/briefing";
 
 export interface SignupCTAProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -15,22 +16,64 @@ const SignupCTA = React.forwardRef<HTMLDivElement, SignupCTAProps>(
     const [kakaoId, setKakaoId] = React.useState("");
     const [isSubmitting, setIsSubmitting] = React.useState(false);
     const [isSubmitted, setIsSubmitted] = React.useState(false);
+    const [error, setError] = React.useState<string | null>(null);
+    const [stats, setStats] = React.useState<BetaSignupStats>(getBetaSignupStats());
 
-    const stats = getBetaSignupStats();
+    // Fetch real stats from API
+    React.useEffect(() => {
+      const fetchStats = async () => {
+        try {
+          const response = await fetch("/api/beta-signup");
+          if (response.ok) {
+            const data = await response.json();
+            if (data.success && data.data) {
+              setStats(data.data);
+            }
+          }
+        } catch {
+          // Use mock data as fallback
+          console.log("[SignupCTA] Using mock stats as fallback");
+        }
+      };
+      fetchStats();
+    }, []);
+
     const progressPercent = (stats.currentCount / stats.targetCount) * 100;
 
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
       setIsSubmitting(true);
+      setError(null);
 
-      // Mock 제출 - 실제 API로 교체 시: fetch('/api/beta-signup', { ... })
-      console.log("베타 신청:", { email, kakaoId });
+      try {
+        const response = await fetch("/api/beta-signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, kakaoId: kakaoId || null }),
+        });
 
-      // 시뮬레이션을 위한 딜레이
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+        const data = await response.json();
 
-      setIsSubmitting(false);
-      setIsSubmitted(true);
+        if (!response.ok || !data.success) {
+          throw new Error(data.error || "신청 중 오류가 발생했습니다.");
+        }
+
+        setIsSubmitted(true);
+        // Update stats
+        if (data.data) {
+          setStats((prev) => ({
+            ...prev,
+            currentCount: prev.currentCount + 1,
+            remainingSlots: prev.remainingSlots - 1,
+          }));
+        }
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "신청 중 오류가 발생했습니다.");
+      } finally {
+        setIsSubmitting(false);
+      }
     };
 
     return (
@@ -38,7 +81,7 @@ const SignupCTA = React.forwardRef<HTMLDivElement, SignupCTAProps>(
         ref={ref}
         data-slot="signup-cta"
         className={cn(
-          "relative my-16 rounded-2xl overflow-hidden",
+          "relative my-10 sm:my-12 md:my-16 rounded-xl sm:rounded-2xl overflow-hidden",
           className
         )}
         {...props}
@@ -57,17 +100,17 @@ const SignupCTA = React.forwardRef<HTMLDivElement, SignupCTAProps>(
           aria-hidden="true"
         />
 
-        <div className="relative p-8 md:p-12">
+        <div className="relative p-5 sm:p-8 md:p-12">
           <div className="text-center max-w-lg mx-auto">
             {/* 프로그레스 인디케이터 */}
-            <div className="mb-8">
-              <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="mb-6 sm:mb-8">
+              <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
                 <span className="inline-flex items-baseline gap-1.5 font-[family-name:var(--font-display)]">
-                  <span className="text-4xl md:text-5xl font-medium text-economy">
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-medium text-economy">
                     {stats.currentCount}
                   </span>
-                  <span className="text-2xl text-text-muted">/</span>
-                  <span className="text-2xl text-text-secondary">
+                  <span className="text-xl sm:text-2xl text-text-muted">/</span>
+                  <span className="text-xl sm:text-2xl text-text-secondary">
                     {stats.targetCount}
                   </span>
                 </span>
@@ -91,20 +134,20 @@ const SignupCTA = React.forwardRef<HTMLDivElement, SignupCTAProps>(
             </div>
 
             {/* 타이틀 */}
-            <Headline as="h2" size="h2" weight="semibold" className="mb-4 text-text-primary">
+            <Headline as="h2" size="h2" weight="semibold" className="mb-3 sm:mb-4 text-text-primary text-xl sm:text-2xl md:text-3xl">
               매일 아침 7시
               <br />
               <span className="text-gradient">카카오톡으로 먼저 받아보세요</span>
             </Headline>
 
-            <BodyText tone="secondary" className="mb-8 leading-relaxed">
+            <BodyText tone="secondary" className="mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
               베타 기간 중 무료로 제공됩니다.
               <br className="hidden sm:block" />
               매일 아침 출근 전, 어제 하루의 뉴스를 한눈에 파악하세요.
             </BodyText>
 
             {isSubmitted ? (
-              <div className="glass-card rounded-xl p-6">
+              <div className="glass-card rounded-xl p-4 sm:p-6">
                 <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-economy/20 flex items-center justify-center">
                   <svg
                     className="w-6 h-6 text-economy"
@@ -120,15 +163,20 @@ const SignupCTA = React.forwardRef<HTMLDivElement, SignupCTAProps>(
                     />
                   </svg>
                 </div>
-                <Headline as="p" size="h3" weight="medium" className="text-economy mb-2">
+                <Headline as="p" size="h3" weight="medium" className="text-economy mb-2 text-lg sm:text-xl">
                   신청이 완료되었습니다
                 </Headline>
-                <BodyText tone="muted" size="sm">
+                <BodyText tone="muted" size="sm" className="text-xs sm:text-sm">
                   베타 서비스 오픈 시 안내 메시지를 보내드리겠습니다.
                 </BodyText>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+                {error && (
+                  <div className="p-3 rounded-lg bg-politics/10 border border-politics/20 text-politics text-sm">
+                    {error}
+                  </div>
+                )}
                 <div>
                   <Input
                     type="email"
@@ -136,7 +184,7 @@ const SignupCTA = React.forwardRef<HTMLDivElement, SignupCTAProps>(
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full bg-glass-bg border-glass-border text-text-primary placeholder:text-text-muted/60 focus:border-economy/50 focus:ring-1 focus:ring-economy/30 rounded-xl h-12"
+                    className="w-full bg-glass-bg border-glass-border text-text-primary placeholder:text-text-muted/60 focus:border-economy/50 focus:ring-1 focus:ring-economy/30 rounded-lg sm:rounded-xl h-11 sm:h-12 text-sm sm:text-base"
                   />
                 </div>
                 <div>
@@ -145,14 +193,14 @@ const SignupCTA = React.forwardRef<HTMLDivElement, SignupCTAProps>(
                     placeholder="카카오톡 ID (선택)"
                     value={kakaoId}
                     onChange={(e) => setKakaoId(e.target.value)}
-                    className="w-full bg-glass-bg border-glass-border text-text-primary placeholder:text-text-muted/60 focus:border-economy/50 focus:ring-1 focus:ring-economy/30 rounded-xl h-12"
+                    className="w-full bg-glass-bg border-glass-border text-text-primary placeholder:text-text-muted/60 focus:border-economy/50 focus:ring-1 focus:ring-economy/30 rounded-lg sm:rounded-xl h-11 sm:h-12 text-sm sm:text-base"
                   />
                 </div>
                 <Button
                   type="submit"
                   disabled={isSubmitting || !email}
                   className={cn(
-                    "w-full h-12 rounded-xl font-[family-name:var(--font-body)] font-medium text-base",
+                    "w-full min-h-[44px] h-11 sm:h-12 rounded-lg sm:rounded-xl font-[family-name:var(--font-body)] font-medium text-sm sm:text-base",
                     "bg-gradient-to-r from-politics via-economy to-society",
                     "hover:opacity-90 transition-opacity",
                     "disabled:opacity-50 disabled:cursor-not-allowed",

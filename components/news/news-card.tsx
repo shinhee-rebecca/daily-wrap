@@ -73,7 +73,7 @@ const NewsCard = React.forwardRef<HTMLElement, NewsCardProps>(
         data-category={category}
         className={cn(
           newsCardVariants({ variant }),
-          "glass-card p-5",
+          "glass-card p-4 sm:p-5",
           sectionGlowClasses[category],
           sectionBorderHover[category],
           "hover:translate-y-[-2px]",
@@ -82,13 +82,13 @@ const NewsCard = React.forwardRef<HTMLElement, NewsCardProps>(
         {...props}
       >
         {/* 카테고리 인디케이터 */}
-        <div className="flex items-center gap-2 mb-3">
+        <div className="flex items-center gap-2 mb-2 sm:mb-3">
           <span className={cn("w-1.5 h-1.5 rounded-full", `bg-${category}`)} />
           <Caption
             tone="muted"
             size="sm"
             uppercase
-            className="tracking-widest opacity-60"
+            className="tracking-widest opacity-60 text-[10px] sm:text-xs"
           >
             {category}
           </Caption>
@@ -99,8 +99,8 @@ const NewsCard = React.forwardRef<HTMLElement, NewsCardProps>(
           size={variant === "featured" ? "h2" : "h3"}
           weight="semibold"
           className={cn(
-            "mb-3 text-text-primary group-hover:text-white transition-colors",
-            variant === "featured" && "leading-snug"
+            "mb-2 sm:mb-3 text-text-primary group-hover:text-white transition-colors",
+            variant === "featured" ? "text-lg sm:text-xl md:text-2xl leading-snug" : "text-base sm:text-lg"
           )}
         >
           {title}
@@ -109,7 +109,10 @@ const NewsCard = React.forwardRef<HTMLElement, NewsCardProps>(
         <BodyText
           size={variant === "featured" ? "default" : "sm"}
           tone="secondary"
-          className="mb-4 leading-relaxed"
+          className={cn(
+            "mb-3 sm:mb-4 leading-relaxed",
+            variant === "featured" ? "text-sm sm:text-base" : "text-xs sm:text-sm"
+          )}
         >
           {summary}
         </BodyText>
@@ -119,16 +122,16 @@ const NewsCard = React.forwardRef<HTMLElement, NewsCardProps>(
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            "inline-flex items-center gap-2 transition-all duration-200",
+            "inline-flex items-center gap-2 transition-all duration-200 min-h-[44px] min-w-[44px] -m-2 p-2",
             "opacity-70 group-hover:opacity-100",
             sectionAccentColors[category]
           )}
         >
-          <Caption tone="muted" className="font-medium group-hover:text-current transition-colors">
+          <Caption tone="muted" className="font-medium group-hover:text-current transition-colors text-xs sm:text-sm">
             {sourceName}
           </Caption>
           <span className="text-sm group-hover:translate-x-1 transition-transform" aria-hidden="true">
-            →
+            &rarr;
           </span>
         </a>
       </article>

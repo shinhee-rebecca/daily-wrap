@@ -32,13 +32,13 @@ const NewsSection = React.forwardRef<HTMLElement, NewsSectionProps>(
         ref={ref}
         data-slot="news-section"
         data-section={section}
-        className={cn("glass-card rounded-2xl p-6 md:p-8", className)}
+        className={cn("glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8", className)}
         {...props}
       >
         <SectionHeader section={section} />
 
         {/* Featured 뉴스 - 더 큰 카드 */}
-        <div className="mb-6">
+        <div className="mb-4 sm:mb-6">
           <NewsCard
             variant="featured"
             title={featuredItem.title}
@@ -50,9 +50,9 @@ const NewsSection = React.forwardRef<HTMLElement, NewsSectionProps>(
           />
         </div>
 
-        {/* Secondary 뉴스 그리드 */}
+        {/* Secondary 뉴스 그리드 - 반응형: Mobile 1열, Tablet 2열, Desktop 2열 */}
         {secondaryItems.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {secondaryItems.map((item, index) => (
               <NewsCard
                 key={item.id}
