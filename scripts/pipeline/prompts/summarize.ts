@@ -3,7 +3,7 @@
  *
  * 뉴스 기사 요약을 위한 프롬프트 및 함수를 제공합니다.
  * - 한줄 헤드라인 생성
- * - 2-3문장 요약 생성
+ * - 4-5문장 요약 생성
  * - 원문 복사 금지 (저작권 보호)
  */
 
@@ -19,7 +19,7 @@ import type { RawNewsItem } from "../rss-fetcher";
 export interface SummarizedNews {
   originalTitle: string;
   headline: string; // AI가 생성한 한줄 헤드라인
-  summary: string; // 2-3문장 요약
+  summary: string; // 4-5문장 요약
   link: string;
   sourceName: string;
   category: string;
@@ -40,7 +40,7 @@ const SYSTEM_PROMPT = `당신은 한국 뉴스를 요약하는 전문 에디터�
 ### 출력 형식
 각 뉴스에 대해 다음을 생성하세요:
 - headline: 핵심을 담은 한줄 헤드라인 (15-25자)
-- summary: 누가/무엇을/언제/왜를 담은 2-3문장 요약 (50-100자)
+- summary: 누가/무엇을/언제/왜를 담은 4-5문장 요약 (100-180자)
 
 JSON 형식으로 응답하세요.`;
 
@@ -60,7 +60,7 @@ function createSummarizePrompt(news: RawNewsItem): string {
 \`\`\`json
 {
   "headline": "핵심을 담은 한줄 헤드라인",
-  "summary": "2-3문장으로 요약된 내용"
+  "summary": "4-5문장으로 요약된 내용"
 }
 \`\`\``;
 }
@@ -101,7 +101,7 @@ ${newsItems}
 function createMockResponse(news: RawNewsItem): { headline: string; summary: string } {
   return {
     headline: `[Mock] ${news.title.slice(0, 20)}...`,
-    summary: `이 뉴스는 ${news.category} 분야의 소식입니다. ${news.sourceName}에서 보도했습니다. 자세한 내용은 원문을 참고하세요.`,
+    summary: `이 뉴스는 ${news.category} 분야의 소식입니다. ${news.sourceName}에서 보도했습니다. 해당 사안은 최근 주목받고 있는 이슈로, 관련 당사자들의 반응이 주목됩니다. 향후 추가적인 전개가 예상됩니다. 자세한 내용은 원문을 참고하세요.`,
   };
 }
 
