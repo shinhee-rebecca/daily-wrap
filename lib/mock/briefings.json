@@ -1,0 +1,540 @@
+{
+  "briefings": [
+    {
+      "id": "briefing-2026-01-19",
+      "date": "2026-01-19",
+      "createdAt": "2026-01-19T06:00:00+09:00",
+      "publishedAt": "2026-01-19T07:00:00+09:00",
+      "politics": [
+        {
+          "id": "pol-20260119-1",
+          "briefingId": "briefing-2026-01-19",
+          "category": "politics",
+          "title": "윤석열 대통령 탄핵심판 5차 변론, 대통령 측 최종 변론 진행",
+          "summary": "헌법재판소는 19일 오전 10시 대심판정에서 윤석열 대통령 탄핵심판 사건의 5차 변론기일을 열었다. 이날 대통령 측은 비상계엄 선포의 정당성을 주장하며 헌법 제77조의 해석을 둘러싼 법리 논쟁을 펼쳤다.",
+          "sourceName": "연합뉴스",
+          "sourceUrl": "https://www.yna.co.kr/",
+          "importanceRank": 1,
+          "createdAt": "2026-01-19T06:00:00+09:00"
+        },
+        {
+          "id": "pol-20260119-2",
+          "briefingId": "briefing-2026-01-19",
+          "category": "politics",
+          "title": "국민의힘 비대위, 차기 당대표 선출 일정 확정",
+          "summary": "국민의힘 비상대책위원회는 18일 전당대회 일정을 2월 중으로 확정했다. 당 지도부 교체를 위한 전당대회에서는 신임 당대표와 최고위원을 선출할 예정이다.",
+          "sourceName": "조선일보",
+          "sourceUrl": "https://www.chosun.com/",
+          "importanceRank": 2,
+          "createdAt": "2026-01-19T06:00:00+09:00"
+        },
+        {
+          "id": "pol-20260119-3",
+          "briefingId": "briefing-2026-01-19",
+          "category": "politics",
+          "title": "민주당, 검찰개혁 특별법 발의 추진",
+          "summary": "더불어민주당은 검찰 권한 분산을 핵심으로 하는 검찰개혁 특별법 발의를 추진한다고 밝혔다. 수사권과 기소권 분리가 핵심 내용으로 포함될 예정이다.",
+          "sourceName": "한겨레",
+          "sourceUrl": "https://www.hani.co.kr/",
+          "importanceRank": 3,
+          "createdAt": "2026-01-19T06:00:00+09:00"
+        },
+        {
+          "id": "pol-20260119-4",
+          "briefingId": "briefing-2026-01-19",
+          "category": "politics",
+          "title": "한동훈 전 대표, 신당 창당설 일축",
+          "summary": "한동훈 전 국민의힘 대표는 최근 불거진 신당 창당설에 대해 '사실무근'이라며 일축했다. 그는 당내 혁신을 통한 변화를 강조했다.",
+          "sourceName": "중앙일보",
+          "sourceUrl": "https://www.joongang.co.kr/",
+          "importanceRank": 4,
+          "createdAt": "2026-01-19T06:00:00+09:00"
+        },
+        {
+          "id": "pol-20260119-5",
+          "briefingId": "briefing-2026-01-19",
+          "category": "politics",
+          "title": "지방선거 앞두고 여야 공천 경쟁 본격화",
+          "summary": "6월 지방선거를 앞두고 여야의 공천 경쟁이 본격화되고 있다. 주요 광역단체장 후보 선출을 위한 경선 일정이 속속 발표되고 있다.",
+          "sourceName": "동아일보",
+          "sourceUrl": "https://www.donga.com/",
+          "importanceRank": 5,
+          "createdAt": "2026-01-19T06:00:00+09:00"
+        }
+      ],
+      "economy": [
+        {
+          "id": "eco-20260119-1",
+          "briefingId": "briefing-2026-01-19",
+          "category": "economy",
+          "title": "한국은행, 기준금리 동결 결정... 2.75% 유지",
+          "summary": "한국은행 금융통화위원회는 19일 기준금리를 연 2.75%로 동결했다. 이주열 총재는 물가 안정과 경기 회복 사이의 균형을 고려한 결정이라고 설명했다.",
+          "sourceName": "매일경제",
+          "sourceUrl": "https://www.mk.co.kr/",
+          "importanceRank": 1,
+          "createdAt": "2026-01-19T06:00:00+09:00"
+        },
+        {
+          "id": "eco-20260119-2",
+          "briefingId": "briefing-2026-01-19",
+          "category": "economy",
+          "title": "삼성전자 4분기 영업이익 8조원대 전망",
+          "summary": "증권가에서는 삼성전자의 4분기 영업이익이 8조원대를 기록할 것으로 전망했다. 메모리 반도체 가격 반등과 파운드리 수주 증가가 실적 개선을 이끌 것으로 예상된다.",
+          "sourceName": "한국경제",
+          "sourceUrl": "https://www.hankyung.com/",
+          "importanceRank": 2,
+          "createdAt": "2026-01-19T06:00:00+09:00"
+        },
+        {
+          "id": "eco-20260119-3",
+          "briefingId": "briefing-2026-01-19",
+          "category": "economy",
+          "title": "코스피 2,700선 재돌파... 외국인 순매수 지속",
+          "summary": "코스피 지수가 외국인의 지속적인 순매수에 힘입어 2,700선을 재돌파했다. 전문가들은 글로벌 유동성 확대 기대감이 시장을 이끌고 있다고 분석했다.",
+          "sourceName": "서울경제",
+          "sourceUrl": "https://www.sedaily.com/",
+          "importanceRank": 3,
+          "createdAt": "2026-01-19T06:00:00+09:00"
+        },
+        {
+          "id": "eco-20260119-4",
+          "briefingId": "briefing-2026-01-19",
+          "category": "economy",
+          "title": "전기차 배터리 업계, 북미 공장 증설 경쟁",
+          "summary": "LG에너지솔루션과 SK온 등 국내 배터리 업체들이 북미 시장 선점을 위한 공장 증설 경쟁을 벌이고 있다. IRA 법안에 따른 보조금 혜택을 노린 전략이다.",
+          "sourceName": "아시아경제",
+          "sourceUrl": "https://www.asiae.co.kr/",
+          "importanceRank": 4,
+          "createdAt": "2026-01-19T06:00:00+09:00"
+        },
+        {
+          "id": "eco-20260119-5",
+          "briefingId": "briefing-2026-01-19",
+          "category": "economy",
+          "title": "서울 아파트 전세가율 60% 돌파... 역전세 우려",
+          "summary": "서울 아파트 전세가율이 60%를 돌파하며 역전세 우려가 커지고 있다. 전문가들은 금리 인하 시점에 따라 전세 시장 변동성이 커질 수 있다고 경고했다.",
+          "sourceName": "머니투데이",
+          "sourceUrl": "https://www.mt.co.kr/",
+          "importanceRank": 5,
+          "createdAt": "2026-01-19T06:00:00+09:00"
+        }
+      ],
+      "society": [
+        {
+          "id": "soc-20260119-1",
+          "briefingId": "briefing-2026-01-19",
+          "category": "society",
+          "title": "전국 대설주의보 발령... 출근길 교통 대란 우려",
+          "summary": "기상청은 19일 전국 대부분 지역에 대설주의보를 발령했다. 수도권에는 최대 10cm 이상의 눈이 예상되며, 출근길 교통 대란이 우려된다.",
+          "sourceName": "KBS뉴스",
+          "sourceUrl": "https://news.kbs.co.kr/",
+          "importanceRank": 1,
+          "createdAt": "2026-01-19T06:00:00+09:00"
+        },
+        {
+          "id": "soc-20260119-2",
+          "briefingId": "briefing-2026-01-19",
+          "category": "society",
+          "title": "수능 정시 원서접수 시작... 의대 쏠림 현상 심화",
+          "summary": "2026학년도 대학 정시 원서접수가 시작됐다. 의대 증원 영향으로 상위권 학생들의 의대 쏠림 현상이 심화되고 있어 다른 학과 경쟁률 하락이 예상된다.",
+          "sourceName": "SBS뉴스",
+          "sourceUrl": "https://news.sbs.co.kr/",
+          "importanceRank": 2,
+          "createdAt": "2026-01-19T06:00:00+09:00"
+        },
+        {
+          "id": "soc-20260119-3",
+          "briefingId": "briefing-2026-01-19",
+          "category": "society",
+          "title": "서울시, 노후 지하철 역사 전면 리모델링 추진",
+          "summary": "서울시가 개통 40년 이상 된 노후 지하철 역사에 대한 전면 리모델링을 추진한다. 1단계로 1~4호선 주요 환승역 20곳이 선정됐다.",
+          "sourceName": "MBC뉴스",
+          "sourceUrl": "https://imnews.imbc.com/",
+          "importanceRank": 3,
+          "createdAt": "2026-01-19T06:00:00+09:00"
+        },
+        {
+          "id": "soc-20260119-4",
+          "briefingId": "briefing-2026-01-19",
+          "category": "society",
+          "title": "법원, 성범죄 재판 전면 비공개 원칙 적용 확대",
+          "summary": "대법원은 성범죄 사건 재판에 대해 전면 비공개 원칙을 확대 적용한다고 밝혔다. 피해자 보호를 위한 조치로, 2월부터 시행된다.",
+          "sourceName": "뉴시스",
+          "sourceUrl": "https://www.newsis.com/",
+          "importanceRank": 4,
+          "createdAt": "2026-01-19T06:00:00+09:00"
+        },
+        {
+          "id": "soc-20260119-5",
+          "briefingId": "briefing-2026-01-19",
+          "category": "society",
+          "title": "AI 챗봇 학교폭력 신고 시스템 전국 확대",
+          "summary": "교육부가 AI 챗봇을 활용한 학교폭력 신고 시스템을 전국 초중고교에 확대 도입한다. 학생들이 익명으로 24시간 상담과 신고가 가능하다.",
+          "sourceName": "노컷뉴스",
+          "sourceUrl": "https://www.nocutnews.co.kr/",
+          "importanceRank": 5,
+          "createdAt": "2026-01-19T06:00:00+09:00"
+        }
+      ]
+    },
+    {
+      "id": "briefing-2026-01-18",
+      "date": "2026-01-18",
+      "createdAt": "2026-01-18T06:00:00+09:00",
+      "publishedAt": "2026-01-18T07:00:00+09:00",
+      "politics": [
+        {
+          "id": "pol-20260118-1",
+          "briefingId": "briefing-2026-01-18",
+          "category": "politics",
+          "title": "헌재, 탄핵심판 4차 변론서 국무위원 증인 채택",
+          "summary": "헌법재판소는 18일 4차 변론에서 비상계엄 당시 국무위원들을 증인으로 채택했다. 내각 동의 절차와 관련한 사실관계 확인이 진행될 예정이다.",
+          "sourceName": "연합뉴스",
+          "sourceUrl": "https://www.yna.co.kr/",
+          "importanceRank": 1,
+          "createdAt": "2026-01-18T06:00:00+09:00"
+        },
+        {
+          "id": "pol-20260118-2",
+          "briefingId": "briefing-2026-01-18",
+          "category": "politics",
+          "title": "야당, 특검법 재표결 추진... 여당 표결 참여 여부 주목",
+          "summary": "야당이 대통령 탄핵 관련 특별검사법 재표결을 추진하고 있다. 국민의힘 내 일부 의원들의 표결 참여 여부가 관건이 될 전망이다.",
+          "sourceName": "경향신문",
+          "sourceUrl": "https://www.khan.co.kr/",
+          "importanceRank": 2,
+          "createdAt": "2026-01-18T06:00:00+09:00"
+        },
+        {
+          "id": "pol-20260118-3",
+          "briefingId": "briefing-2026-01-18",
+          "category": "politics",
+          "title": "국회, 민생법안 처리 착수... 100개 법안 우선 심의",
+          "summary": "국회가 민생 관련 법안 처리에 착수했다. 여야는 경제활성화법, 청년지원법 등 100여 개 민생법안을 우선 심의하기로 합의했다.",
+          "sourceName": "한국일보",
+          "sourceUrl": "https://www.hankookilbo.com/",
+          "importanceRank": 3,
+          "createdAt": "2026-01-18T06:00:00+09:00"
+        },
+        {
+          "id": "pol-20260118-4",
+          "briefingId": "briefing-2026-01-18",
+          "category": "politics",
+          "title": "외교부, 한미 정상회담 일정 조율 중",
+          "summary": "외교부는 한미 정상회담 일정을 조율 중이라고 밝혔다. 현 정치 상황을 감안해 대행 체제에서의 정상외교 방안을 검토하고 있다.",
+          "sourceName": "뉴스1",
+          "sourceUrl": "https://www.news1.kr/",
+          "importanceRank": 4,
+          "createdAt": "2026-01-18T06:00:00+09:00"
+        },
+        {
+          "id": "pol-20260118-5",
+          "briefingId": "briefing-2026-01-18",
+          "category": "politics",
+          "title": "헌재 앞 찬반 집회 동시 개최... 10만 명 이상 운집",
+          "summary": "헌법재판소 앞에서 탄핵 찬성과 반대 집회가 동시에 열렸다. 양측 합쳐 10만 명 이상이 모여 경찰이 대규모 경비 인력을 배치했다.",
+          "sourceName": "JTBC뉴스",
+          "sourceUrl": "https://news.jtbc.co.kr/",
+          "importanceRank": 5,
+          "createdAt": "2026-01-18T06:00:00+09:00"
+        }
+      ],
+      "economy": [
+        {
+          "id": "eco-20260118-1",
+          "briefingId": "briefing-2026-01-18",
+          "category": "economy",
+          "title": "정부, 반도체 클러스터 추가 조성 계획 발표",
+          "summary": "산업통상자원부가 용인 반도체 클러스터 외에 추가로 2개 지역에 반도체 클러스터를 조성하겠다고 발표했다. 총 50조원 규모의 민간 투자가 예상된다.",
+          "sourceName": "매일경제",
+          "sourceUrl": "https://www.mk.co.kr/",
+          "importanceRank": 1,
+          "createdAt": "2026-01-18T06:00:00+09:00"
+        },
+        {
+          "id": "eco-20260118-2",
+          "briefingId": "briefing-2026-01-18",
+          "category": "economy",
+          "title": "현대차그룹, 미국 조지아 전기차 공장 가동 시작",
+          "summary": "현대차그룹이 미국 조지아주에 건설한 전기차 전용 공장이 공식 가동을 시작했다. 연간 30만대 생산 규모로 북미 전기차 시장 공략에 나선다.",
+          "sourceName": "한국경제",
+          "sourceUrl": "https://www.hankyung.com/",
+          "importanceRank": 2,
+          "createdAt": "2026-01-18T06:00:00+09:00"
+        },
+        {
+          "id": "eco-20260118-3",
+          "briefingId": "briefing-2026-01-18",
+          "category": "economy",
+          "title": "원달러 환율 1,400원대 진입... 3개월 만에 최고치",
+          "summary": "원달러 환율이 1,400원대에 진입하며 3개월 만에 최고치를 기록했다. 정치 불확실성과 달러 강세가 복합 작용한 결과로 분석된다.",
+          "sourceName": "서울경제",
+          "sourceUrl": "https://www.sedaily.com/",
+          "importanceRank": 3,
+          "createdAt": "2026-01-18T06:00:00+09:00"
+        },
+        {
+          "id": "eco-20260118-4",
+          "briefingId": "briefing-2026-01-18",
+          "category": "economy",
+          "title": "네이버, AI 검색 서비스 전면 개편",
+          "summary": "네이버가 생성형 AI를 적용한 새로운 검색 서비스를 전면 개편한다고 발표했다. 검색 결과를 AI가 요약해 제공하는 형태로 변경된다.",
+          "sourceName": "전자신문",
+          "sourceUrl": "https://www.etnews.com/",
+          "importanceRank": 4,
+          "createdAt": "2026-01-18T06:00:00+09:00"
+        },
+        {
+          "id": "eco-20260118-5",
+          "briefingId": "briefing-2026-01-18",
+          "category": "economy",
+          "title": "CES 2026 마무리... 한국 기업 혁신상 대거 수상",
+          "summary": "CES 2026이 마무리된 가운데 한국 기업들이 혁신상을 대거 수상했다. 삼성전자와 LG전자를 비롯해 스타트업까지 총 300개 이상의 상을 받았다.",
+          "sourceName": "디지털데일리",
+          "sourceUrl": "https://www.ddaily.co.kr/",
+          "importanceRank": 5,
+          "createdAt": "2026-01-18T06:00:00+09:00"
+        }
+      ],
+      "society": [
+        {
+          "id": "soc-20260118-1",
+          "briefingId": "briefing-2026-01-18",
+          "category": "society",
+          "title": "독감 환자 급증... 전국 의료기관 비상",
+          "summary": "독감 환자가 급증하며 전국 의료기관에 비상이 걸렸다. 질병관리청은 지난주 대비 40% 증가한 환자 수를 발표하며 백신 접종을 권고했다.",
+          "sourceName": "KBS뉴스",
+          "sourceUrl": "https://news.kbs.co.kr/",
+          "importanceRank": 1,
+          "createdAt": "2026-01-18T06:00:00+09:00"
+        },
+        {
+          "id": "soc-20260118-2",
+          "briefingId": "briefing-2026-01-18",
+          "category": "society",
+          "title": "수도권 지하철 파업 예고... 노사 협상 난항",
+          "summary": "수도권 지하철 노조가 다음 주 파업을 예고했다. 임금 인상과 근무 환경 개선을 요구하고 있으며 노사 협상이 난항을 겪고 있다.",
+          "sourceName": "YTN",
+          "sourceUrl": "https://www.ytn.co.kr/",
+          "importanceRank": 2,
+          "createdAt": "2026-01-18T06:00:00+09:00"
+        },
+        {
+          "id": "soc-20260118-3",
+          "briefingId": "briefing-2026-01-18",
+          "category": "society",
+          "title": "서울 강남 재건축 단지, 분양가 3.3당 7천만원 돌파",
+          "summary": "서울 강남구 재건축 아파트 단지의 분양가가 3.3제곱미터당 7천만원을 돌파했다. 역대 최고가 기록으로 부동산 시장의 양극화가 심화되고 있다.",
+          "sourceName": "SBS뉴스",
+          "sourceUrl": "https://news.sbs.co.kr/",
+          "importanceRank": 3,
+          "createdAt": "2026-01-18T06:00:00+09:00"
+        },
+        {
+          "id": "soc-20260118-4",
+          "briefingId": "briefing-2026-01-18",
+          "category": "society",
+          "title": "경찰, 보이스피싱 조직 대규모 검거... 100억원대 피해",
+          "summary": "경찰이 100억원대 피해를 낸 대규모 보이스피싱 조직을 검거했다. 콜센터를 필리핀에 둔 국제 범죄 조직으로 30명이 검거됐다.",
+          "sourceName": "채널A",
+          "sourceUrl": "https://www.ichannela.com/",
+          "importanceRank": 4,
+          "createdAt": "2026-01-18T06:00:00+09:00"
+        },
+        {
+          "id": "soc-20260118-5",
+          "briefingId": "briefing-2026-01-18",
+          "category": "society",
+          "title": "전국 초중고 무상급식 확대... 고등학교까지 적용",
+          "summary": "교육부가 무상급식을 전국 고등학교까지 확대한다고 발표했다. 2026학년도 2학기부터 단계적으로 시행될 예정이다.",
+          "sourceName": "한겨레",
+          "sourceUrl": "https://www.hani.co.kr/",
+          "importanceRank": 5,
+          "createdAt": "2026-01-18T06:00:00+09:00"
+        }
+      ]
+    },
+    {
+      "id": "briefing-2026-01-17",
+      "date": "2026-01-17",
+      "createdAt": "2026-01-17T06:00:00+09:00",
+      "publishedAt": "2026-01-17T07:00:00+09:00",
+      "politics": [
+        {
+          "id": "pol-20260117-1",
+          "briefingId": "briefing-2026-01-17",
+          "category": "politics",
+          "title": "윤석열 대통령 탄핵심판 첫 변론기일, 헌재 앞 집회 인파 몰려",
+          "summary": "헌법재판소는 17일 오전 10시 대심판정에서 윤석열 대통령 탄핵심판 사건의 첫 변론기일을 열었다. 이날 헌재 앞에는 탄핵을 찬성하는 시민들과 반대하는 시민들이 대규모로 운집했다.",
+          "sourceName": "연합뉴스",
+          "sourceUrl": "https://www.yna.co.kr/",
+          "importanceRank": 1,
+          "createdAt": "2026-01-17T06:00:00+09:00"
+        },
+        {
+          "id": "pol-20260117-2",
+          "briefingId": "briefing-2026-01-17",
+          "category": "politics",
+          "title": "국민의힘, 비대위원장 후보 3인 압축",
+          "summary": "국민의힘은 당 지도부 교체를 위한 비상대책위원장 후보를 3인으로 압축했다고 밝혔다. 20일 전당대회에서 최종 선출할 예정이다.",
+          "sourceName": "조선일보",
+          "sourceUrl": "https://www.chosun.com/",
+          "importanceRank": 2,
+          "createdAt": "2026-01-17T06:00:00+09:00"
+        },
+        {
+          "id": "pol-20260117-3",
+          "briefingId": "briefing-2026-01-17",
+          "category": "politics",
+          "title": "민주당 이재명 대표, 공직선거법 위반 혐의 재판 출석",
+          "summary": "더불어민주당 이재명 대표가 공직선거법 위반 혐의로 재판에 출석했다. 허위사실 공표 혐의와 관련한 증거조사가 진행됐다.",
+          "sourceName": "한겨레",
+          "sourceUrl": "https://www.hani.co.kr/",
+          "importanceRank": 3,
+          "createdAt": "2026-01-17T06:00:00+09:00"
+        },
+        {
+          "id": "pol-20260117-4",
+          "briefingId": "briefing-2026-01-17",
+          "category": "politics",
+          "title": "정부, 대통령 권한대행 체제 장기화 대비책 마련",
+          "summary": "정부가 대통령 권한대행 체제 장기화에 대비한 행정 운영 방안을 마련했다. 국정 공백 최소화를 위한 비상 대책반이 가동 중이다.",
+          "sourceName": "중앙일보",
+          "sourceUrl": "https://www.joongang.co.kr/",
+          "importanceRank": 4,
+          "createdAt": "2026-01-17T06:00:00+09:00"
+        },
+        {
+          "id": "pol-20260117-5",
+          "briefingId": "briefing-2026-01-17",
+          "category": "politics",
+          "title": "조국혁신당, 탄핵 촉구 촛불집회 주말 개최 예고",
+          "summary": "조국혁신당은 이번 주말 광화문 일대에서 탄핵 촉구 대규모 촛불집회를 개최한다고 예고했다. 50만 명 이상의 시민 참여를 목표로 하고 있다.",
+          "sourceName": "오마이뉴스",
+          "sourceUrl": "https://www.ohmynews.com/",
+          "importanceRank": 5,
+          "createdAt": "2026-01-17T06:00:00+09:00"
+        }
+      ],
+      "economy": [
+        {
+          "id": "eco-20260117-1",
+          "briefingId": "briefing-2026-01-17",
+          "category": "economy",
+          "title": "한국 경제성장률 2.3% 전망... IMF 하향 조정",
+          "summary": "국제통화기금(IMF)이 한국의 2026년 경제성장률 전망치를 2.5%에서 2.3%로 하향 조정했다. 정치적 불확실성과 수출 둔화가 주요 원인으로 지목됐다.",
+          "sourceName": "매일경제",
+          "sourceUrl": "https://www.mk.co.kr/",
+          "importanceRank": 1,
+          "createdAt": "2026-01-17T06:00:00+09:00"
+        },
+        {
+          "id": "eco-20260117-2",
+          "briefingId": "briefing-2026-01-17",
+          "category": "economy",
+          "title": "현대자동차, 2025년 역대 최대 영업이익 달성",
+          "summary": "현대자동차가 2025년 역대 최대 영업이익을 달성했다고 발표했다. SUV와 제네시스 브랜드의 판매 호조가 실적을 견인했다.",
+          "sourceName": "한국경제",
+          "sourceUrl": "https://www.hankyung.com/",
+          "importanceRank": 2,
+          "createdAt": "2026-01-17T06:00:00+09:00"
+        },
+        {
+          "id": "eco-20260117-3",
+          "briefingId": "briefing-2026-01-17",
+          "category": "economy",
+          "title": "비트코인 1억원 돌파... 국내 투자자 매수세 증가",
+          "summary": "비트코인이 1억원을 돌파하며 사상 최고가를 경신했다. 국내 투자자들의 매수세가 증가하며 가상자산 시장이 활기를 띠고 있다.",
+          "sourceName": "서울경제",
+          "sourceUrl": "https://www.sedaily.com/",
+          "importanceRank": 3,
+          "createdAt": "2026-01-17T06:00:00+09:00"
+        },
+        {
+          "id": "eco-20260117-4",
+          "briefingId": "briefing-2026-01-17",
+          "category": "economy",
+          "title": "카카오, 금융 계열사 통합 추진... 카카오금융지주 설립",
+          "summary": "카카오가 카카오뱅크, 카카오페이 등 금융 계열사를 통합한 카카오금융지주 설립을 추진한다. 종합 금융 플랫폼으로의 전환을 가속화한다는 전략이다.",
+          "sourceName": "아시아경제",
+          "sourceUrl": "https://www.asiae.co.kr/",
+          "importanceRank": 4,
+          "createdAt": "2026-01-17T06:00:00+09:00"
+        },
+        {
+          "id": "eco-20260117-5",
+          "briefingId": "briefing-2026-01-17",
+          "category": "economy",
+          "title": "정유업계, 원유 가격 하락에도 수익성 악화 전망",
+          "summary": "정유업계가 원유 가격 하락에도 불구하고 정제마진 축소로 수익성이 악화될 것으로 전망된다. 중국발 공급 과잉이 원인으로 분석된다.",
+          "sourceName": "파이낸셜뉴스",
+          "sourceUrl": "https://www.fnnews.com/",
+          "importanceRank": 5,
+          "createdAt": "2026-01-17T06:00:00+09:00"
+        }
+      ],
+      "society": [
+        {
+          "id": "soc-20260117-1",
+          "briefingId": "briefing-2026-01-17",
+          "category": "society",
+          "title": "전국 한파 특보... 체감온도 영하 20도 이하",
+          "summary": "기상청이 전국에 한파 특보를 발령했다. 내일까지 전국 대부분 지역의 체감온도가 영하 20도 이하로 떨어질 것으로 예보됐다.",
+          "sourceName": "KBS뉴스",
+          "sourceUrl": "https://news.kbs.co.kr/",
+          "importanceRank": 1,
+          "createdAt": "2026-01-17T06:00:00+09:00"
+        },
+        {
+          "id": "soc-20260117-2",
+          "briefingId": "briefing-2026-01-17",
+          "category": "society",
+          "title": "인천공항 2터미널 확장 공사 완료... 연간 1억명 수용",
+          "summary": "인천국제공항 제2터미널 확장 공사가 완료되어 오늘부터 운영에 들어갔다. 확장으로 연간 수용 가능 여객 수가 1억 명으로 늘어났다.",
+          "sourceName": "SBS뉴스",
+          "sourceUrl": "https://news.sbs.co.kr/",
+          "importanceRank": 2,
+          "createdAt": "2026-01-17T06:00:00+09:00"
+        },
+        {
+          "id": "soc-20260117-3",
+          "briefingId": "briefing-2026-01-17",
+          "category": "society",
+          "title": "고령 운전자 면허 갱신 주기 단축 법안 국회 통과",
+          "summary": "고령 운전자의 면허 갱신 주기를 단축하는 법안이 국회를 통과했다. 75세 이상 운전자는 매년 적성검사를 받아야 하며, 3월부터 시행된다.",
+          "sourceName": "MBC뉴스",
+          "sourceUrl": "https://imnews.imbc.com/",
+          "importanceRank": 3,
+          "createdAt": "2026-01-17T06:00:00+09:00"
+        },
+        {
+          "id": "soc-20260117-4",
+          "briefingId": "briefing-2026-01-17",
+          "category": "society",
+          "title": "서울 지하철 2호선 신형 전동차 투입... 혼잡도 개선",
+          "summary": "서울교통공사가 지하철 2호선에 신형 전동차를 투입했다. 좌석 배치를 개선하고 입석 공간을 확대해 출퇴근 시간대 혼잡도가 개선될 전망이다.",
+          "sourceName": "뉴시스",
+          "sourceUrl": "https://www.newsis.com/",
+          "importanceRank": 4,
+          "createdAt": "2026-01-17T06:00:00+09:00"
+        },
+        {
+          "id": "soc-20260117-5",
+          "briefingId": "briefing-2026-01-17",
+          "category": "society",
+          "title": "대학 등록금 동결 8년째... 사립대 재정난 호소",
+          "summary": "대학 등록금이 8년째 동결되면서 사립대학들이 재정난을 호소하고 있다. 대학 측은 교육의 질 저하 우려를 제기하며 등록금 인상 필요성을 주장했다.",
+          "sourceName": "노컷뉴스",
+          "sourceUrl": "https://www.nocutnews.co.kr/",
+          "importanceRank": 5,
+          "createdAt": "2026-01-17T06:00:00+09:00"
+        }
+      ]
+    }
+  ],
+  "betaSignupStats": {
+    "currentCount": 42,
+    "targetCount": 100,
+    "remainingSlots": 58
+  }
+}
