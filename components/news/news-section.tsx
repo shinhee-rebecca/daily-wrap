@@ -4,7 +4,6 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { SectionHeader } from "@/components/news/section-header";
 import { NewsCard } from "@/components/news/news-card";
-import { Divider } from "@/components/ui/divider";
 import type { NewsItem, NewsCategory } from "@/types/briefing";
 
 export interface NewsSectionProps extends React.HTMLAttributes<HTMLElement> {
@@ -33,25 +32,28 @@ const NewsSection = React.forwardRef<HTMLElement, NewsSectionProps>(
         ref={ref}
         data-slot="news-section"
         data-section={section}
-        className={cn("py-8", className)}
+        className={cn("glass-card rounded-2xl p-6 md:p-8", className)}
         {...props}
       >
         <SectionHeader section={section} />
 
-        {/* Featured 뉴스 */}
-        <NewsCard
-          variant="featured"
-          title={featuredItem.title}
-          summary={featuredItem.summary}
-          sourceName={featuredItem.sourceName}
-          sourceUrl={featuredItem.sourceUrl}
-          category={section}
-        />
+        {/* Featured 뉴스 - 더 큰 카드 */}
+        <div className="mb-6">
+          <NewsCard
+            variant="featured"
+            title={featuredItem.title}
+            summary={featuredItem.summary}
+            sourceName={featuredItem.sourceName}
+            sourceUrl={featuredItem.sourceUrl}
+            category={section}
+            className="bg-glass-highlight/50"
+          />
+        </div>
 
         {/* Secondary 뉴스 그리드 */}
         {secondaryItems.length > 0 && (
-          <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {secondaryItems.map((item) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {secondaryItems.map((item, index) => (
               <NewsCard
                 key={item.id}
                 variant="secondary"
@@ -60,12 +62,13 @@ const NewsSection = React.forwardRef<HTMLElement, NewsSectionProps>(
                 sourceName={item.sourceName}
                 sourceUrl={item.sourceUrl}
                 category={section}
+                style={{
+                  animationDelay: `${index * 100}ms`,
+                }}
               />
             ))}
           </div>
         )}
-
-        {showDivider && <Divider variant="section" spacing="xl" className="mt-8" />}
       </section>
     );
   }
